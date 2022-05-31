@@ -15,6 +15,8 @@
 
     <?php
         $controller=new ControlleurProduit;
+        $controller->afficherListe();
+
         $controller->afficherTableau();
     ?>
 

@@ -1,7 +1,7 @@
 <?php
 
+include_once "./include/config.php";
 
-    
 class modele_produit {
     public $id; 
     public $code; 
@@ -18,8 +18,8 @@ class modele_produit {
     }
 
     static function connecter() {
-        include_once "./include/config.php";
-        $mysqli = new mysqli($host, $username, $password, $database);
+        
+        $mysqli = new mysqli(Db::$host, Db::$username, Db::$password, Db::$database);
 
         // Vérifier la connexion
         if ($mysqli -> connect_errno) {
