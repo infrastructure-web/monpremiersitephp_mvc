@@ -6,12 +6,12 @@ class ControlleurProduit {
 
     function afficherListe() {
         $produits = modele_produit::ObtenirTous();
-        require_once './vues/produits/listeProduits.php';
+        require './vues/produits/listeProduits.php';
     }
 
     function afficherTableau() {
         $produits = modele_produit::ObtenirTous();
-        require_once './vues/produits/tableauProduits.php';
+        require './vues/produits/tableauProduits.php';
     }
 
 }

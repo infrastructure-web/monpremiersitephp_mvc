@@ -18,6 +18,10 @@
         $controller->afficherListe();
 
         $controller->afficherTableau();
+
+        $controller->afficherListe();
+
+        $controller->afficherTableau();
     ?>
 
  </body>
