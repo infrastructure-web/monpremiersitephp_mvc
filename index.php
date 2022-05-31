@@ -14,14 +14,14 @@
     <h1>Je fais des tests</h1>
 
     <?php
-        $controller=new ControlleurProduit;
-        $controller->afficherListe();
+        $controllerProduits=new ControlleurProduit;
+        $controllerProduits->afficherListe();
 
-        $controller->afficherTableau();
+        $controllerProduits->afficherTableau();
 
-        $controller->afficherListe();
+        $controllerProduits->afficherListe();
 
-        $controller->afficherTableau();
+        $controllerProduits->afficherTableau();
     ?>
 
  </body>
