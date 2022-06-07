@@ -1,5 +1,5 @@
 <!-- Affichage en mode "tableau" -->
-<h1>Affichage en mode "tableau"</h1>
+<h2>Affichage en mode "tableau"</h2>
 <table>
 
     <?php
