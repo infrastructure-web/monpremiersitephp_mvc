@@ -96,20 +96,20 @@ class ControlleurProduit {
     }
 
     /***
-     * Fonction permettant d'ajouter un produit
+     * Fonction permettant de modifier un produit
      */
     function editer() {
         if(isset($_GET['id'], $_POST['code']) && isset($_POST['nom']) && isset($_POST['prix_unitaire']) && isset($_POST['prix_vente']) && isset($_POST['qte_stock'])) {
             $message = modele_produit::editer($_GET['id'], $_POST['code'], $_POST['nom'], $_POST['prix_unitaire'], $_POST['prix_vente'], $_POST['qte_stock']);
             echo $message;
         } else {
-            $erreur = "Impossible d'éditer le produit. Des informations sont manquantes";
+            $erreur = "Impossible de modifier le produit. Des informations sont manquantes";
             require './vues/erreur.php';
         }
     }
 
     /***
-     * Fonction permettant d'ajouter un produit
+     * Fonction permettant de supprimer un produit
      */
     function supprimer() {
         if(isset($_GET['id'])) {
