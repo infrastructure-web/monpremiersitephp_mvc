@@ -5,3 +5,7 @@
     <h4>Prix de vente: <?= $produit->prix_vente ?>$</h4>
   </div>
 </div>
+
+<form method="POST">
+    <button name="boutonSupprimer" type="submit">Supprimer le produit</button><br>
+</form>

@@ -11,12 +11,16 @@
   <title>Mon super site - Fiche produit</title>
  </head>
  <body>
+     
     <h1>Fiche détaillée d'un produit</h1>
 
     <?php
         $controllerProduits=new ControlleurProduit;
         $controllerProduits->afficherFiche();
     ?>
+    
+    <a href="produits.php">Retour à la liste des produits</a>
+
  </body>
 </html>
 

@@ -18,11 +18,11 @@
             <td><?= $produit->prix_vente ?></td>
             <td><?= $produit->qte_stock ?></td>
             <td>
-                Afficher 
+                <a href="fiche_produit.php?id=<?= $produit->id ?>">Afficher</a>
                 | 
-                Modifier 
+                <a href="edition_produit.php?id=<?= $produit->id ?>">Modifier</a> 
                 | 
-                Supprimer
+                <a href="suppression_produit.php?id=<?= $produit->id ?>">Supprimer</a>
             </td>
         </tr>
     <?php
