@@ -26,3 +26,5 @@ label {
 input, button {
     margin-bottom:20px;
 }
+
+.erreur { color: red; } 

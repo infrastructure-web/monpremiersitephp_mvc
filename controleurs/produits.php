@@ -2,7 +2,7 @@
 
 require_once './modeles/produits.php';
 
-class ControlleurProduit {
+class ControleurProduit {
 
     /***
      * Fonction permettant de récupérer l'ensemble des produits et de les afficher sous forme de liste
