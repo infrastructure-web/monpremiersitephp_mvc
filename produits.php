@@ -13,13 +13,13 @@
  <body>
     <h1>Liste des produits</h1>
 
-    <a href="ajout_produit.php" class="btn btn-primary float-right" aria-label="Ajouter un produit">
+    <a href="#" aria-label="Ajouter un produit">
         Ajouter un produit
     </a>
 
     <?php
         $controllerProduits=new ControlleurProduit;
-        $controllerProduits->afficherTableauAvecBoutonsAction();
+        $controllerProduits->afficherListe();
     ?>
 
  </body>
