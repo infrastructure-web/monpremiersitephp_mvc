@@ -1,54 +1,61 @@
 <?php
-    require_once 'controleurs/produits.php';    
-    $controleurProduits=new ControlleurProduit;
-
-    $title = "Mon super site - Ajout d'un produit";
-    require 'vues/entete.php';
-
+    require_once 'controlleurs/produits.php';
+    
     if (isset($_POST['boutonAjouter'])) {        
-        $controleurProduits->ajouter();
+        $controllerProduits=new ControlleurProduit;
+        $controllerProduits->ajouter();
     }
 ?>
 
-    <h1>Ajouter un produit</h1>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Mon super site - Ajout d'un produit</title>
+  </head>
+  <body>
+    <div class="container">
 
-    <form method="POST">
-      <div>
-        <div>
-          <label for="code">Code *</label>
-          <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
-          <input type="text" id="code" name="code" required maxlength="25">
-        </div>
-        <div>
-          <label for="nom">Nom du produit *</label>
-          <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
-          <input type="text" id="nom" name="nom" required minlength="2" maxlength="50">
-        </div>
-      </div>
+      <h1>Ajouter un produit</h1>
 
-      <div>
+      <form method="POST">
         <div>
-          <label for="prix_unitaire">Prix unitaire (coûtant) *</label>
-          <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
-          <input type="number" step=".01" id="prix_unitaire" name="prix_unitaire" required>
+          <div>
+            <label for="code">Code *</label>
+            <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
+            <input type="text" id="code" name="code" required maxlength="25">
+          </div>
+          <div>
+            <label for="nom">Nom du produit *</label>
+            <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
+            <input type="text" id="nom" name="nom" required minlength="2" maxlength="50">
+          </div>
         </div>
-        <div>
-          <label for="prix_vente">Prix de vente *</label>
-          <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
-          <input type="number" step=".01" id="prix_vente" name="prix_vente" required>
-        </div>
-        <div>
-          <label for="qte_stock">Quantité en stock</label>
-          <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
-          <input type="number" id="qte_stock" name="qte_stock" required>
-        </div>
-      </div>
 
-      <button name="boutonAjouter" type="submit">Ajouter le produit</button><br>
-    </form>
+        <div>
+          <div>
+            <label for="prix_unitaire">Prix unitaire (coûtant) *</label>
+            <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
+            <input type="number" step=".01" id="prix_unitaire" name="prix_unitaire" required>
+          </div>
+          <div>
+            <label for="prix_vente">Prix de vente *</label>
+            <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
+            <input type="number" step=".01" id="prix_vente" name="prix_vente" required>
+          </div>
+          <div>
+            <label for="qte_stock">Quantité en stock</label>
+            <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
+            <input type="number" id="qte_stock" name="qte_stock" required>
+          </div>
+        </div>
 
-    <a href="produits.php">Retour à la liste des produits</a>
+        <button name="boutonAjouter" type="submit">Ajouter le produit</button><br>
+      </form>
+
+      <a href="produits.php">Retour à la liste des produits</a>
+    </div>
     
-<?php
-    require 'vues/pied.php';
-?>
+  </body>
+</html>
