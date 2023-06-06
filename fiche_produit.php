@@ -8,19 +8,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="css/styles.css">
-  <title>Mon super site - Liste des produits</title>
+  <title>Mon super site - Fiche produit</title>
  </head>
  <body>
-    <h1>Liste des produits</h1>
-
-    <a href="ajout_produit.php" class="btn btn-primary float-right" aria-label="Ajouter un produit">
-        Ajouter un produit
-    </a>
+     
+    <h1>Fiche détaillée d'un produit</h1>
 
     <?php
         $controllerProduits=new ControlleurProduit;
-        $controllerProduits->afficherTableauAvecBoutonsAction();
+        $controllerProduits->afficherFiche();
     ?>
+    
+    <a href="produits.php">Retour à la liste des produits</a>
 
  </body>
 </html>

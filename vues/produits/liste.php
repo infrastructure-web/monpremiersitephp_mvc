@@ -1,9 +1,7 @@
 <!-- Affichage en mode "liste" -->
 <h2>Affichage en mode "liste"</h2>
-<ul class="maliste">
+<ul>
     <?php foreach ($produits as $produit) {  ?> 
-        <li>
-            <?= $produit->code ?> (<?= $produit->produit ?>)
-        </li>
+        <li><?= $produit->code ?> (<?= $produit->produit ?>)</li>
     <?php  } ?>
 </ul>

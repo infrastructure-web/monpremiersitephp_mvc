@@ -1,3 +1,7 @@
+<?php
+    require_once 'controlleurs/produits.php';
+?>
+
 <!doctype html>
 <html lang="fr">
  <head>
@@ -8,7 +12,7 @@
  </head>
  <body>
     <div>
-      <h1>Bonjour le monde</h1>
+      <h1><?php echo 'Bonjour le monde!'; ?></h1>
 	    Ma page d'accueil est vraiment géniale, non? :) <br><br>
       <a href="produits.php">Consulter la liste des produits</a>
     </div>
