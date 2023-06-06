@@ -60,7 +60,7 @@ class modele_produit {
         $mysqli = self::connecter();
 
         if ($requete = $mysqli->prepare("SELECT * FROM produits WHERE id=?")) {  // Création d'une requête préparée 
-            $requete->bind_param("s", $id); // Envoi des paramètres à la requête
+            $requete->bind_param("i", $id); // Envoi des paramètres à la requête
 
             $requete->execute(); // Exécution de la requête
 
