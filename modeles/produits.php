@@ -6,6 +6,7 @@ class modele_produit {
     public $id; 
     public $code; 
     public $produit;
+    public $prix_coutant;
     public $prix_vente;
     public $qte_stock;
 

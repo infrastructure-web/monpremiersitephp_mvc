@@ -20,6 +20,14 @@ class ControlleurProduit {
         require './vues/produits/tableau.php';
     }
 
+    /***
+     * Fonction permettant de récupérer l'ensemble des produits et de les afficher sous forme de tableau
+     */
+    function afficherJSON() {
+        $produits = modele_produit::ObtenirTous();
+        echo json_encode($produits);
+    }
+
 }
 
 ?>

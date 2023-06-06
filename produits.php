@@ -19,6 +19,11 @@
 
     <?php
         $controllerProduits=new ControlleurProduit;
+        $controllerProduits->afficherTableau();
+    ?>
+
+    <h2>Affichage en mode "liste"</h2>
+    <?php
         $controllerProduits->afficherListe();
     ?>
 
