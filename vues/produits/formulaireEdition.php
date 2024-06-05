@@ -3,14 +3,9 @@
     <form method="POST">
         <div>
             <div>
-                <label for="code">Code *</label>
-                <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
-                <input type="text" id="code" name="code" required maxlength="25" value="<?= $produit->code ?>">
-            </div>
-            <div>
                 <label for="nom">Nom du produit *</label>
                 <!-- Attention! Vos validations doivent être cohérentes avec le champ correspondant dans la BD! -->
-                <input type="text" id="nom" name="nom" required minlength="2" maxlength="50" value="<?= $produit->produit ?>">
+                <input type="text" id="nom" name="nom" required minlength="2" maxlength="50" value="<?= $produit->nom ?>">
             </div>
         </div>
 
