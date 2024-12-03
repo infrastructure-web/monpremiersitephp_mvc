@@ -1,6 +1,6 @@
 <?php
 
-require_once "./include/config.php";
+require_once __DIR__ . "/../include/config.php";
 
 class modele_produit {
     public $id; 

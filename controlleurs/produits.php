@@ -1,6 +1,6 @@
 <?php
 
-require_once './modeles/produits.php';
+require_once __DIR__ . '/../modeles/produits.php';
 
 class ControlleurProduit {
 
@@ -11,6 +11,12 @@ class ControlleurProduit {
         $produits = modele_produit::ObtenirTous();
         require './vues/produits/liste.php';
     }
+
+    function afficherJSON() {
+        $produits = modele_produit::ObtenirTous();
+        echo json_encode($produits);
+    }
+        
 
     /***
      * Fonction permettant de récupérer l'ensemble des produits et de les afficher sous forme de tableau
@@ -37,6 +43,24 @@ class ControlleurProduit {
             $produit = modele_produit::ObtenirUn($_GET["id"]);
             if($produit) {  // ou if($produit != null)
                 require './vues/produits/fiche.php';
+            } else {
+                $erreur = "Aucun produit trouvé";
+                require './vues/erreur.php';
+            }
+        } else {
+            $erreur = "L'identifiant (id) du produit à afficher est manquant dans l'url";
+            require './vues/erreur.php';
+        }
+    }
+
+    /**
+     * Fonction permettant de récupérer un produit et l'afficher au format JSON
+     */
+    function afficherFicheJSON() {
+        if(isset($_GET["id"])) {
+            $produit = modele_produit::ObtenirUn($_GET["id"]);
+            if($produit) {  // ou if($produit != null)
+                echo json_encode($produit);
             } else {
                 $erreur = "Aucun produit trouvé";
                 require './vues/erreur.php';
