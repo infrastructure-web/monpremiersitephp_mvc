@@ -126,6 +126,29 @@ class ControlleurProduit {
     }
 
     /***
+* Fonction permettant d'ajouter un produit reçu au format JSON
+*/
+function ajouterJSON() {
+    $resultat = new stdClass();
+    $corpsJSON = file_get_contents('php://input'); 
+    $data = json_decode($corpsJSON, TRUE);
+
+    if(isset($data['nom']) && isset($data['prix_coutant'])
+        && isset($data['prix_vente']) 
+        && isset($data['qte_stock'])) {
+    
+         $resultat->message = modele_produit::ajouter($data['nom'],
+                                                        $data['prix_coutant'], 
+                                                        $data['prix_vente'], 
+                                                        $data['qte_stock']);
+    } else {
+        $resultat->message = "Impossible d'ajouter un produit. Des informations sont manquantes";
+    }
+    echo json_encode($resultat);
+}
+    
+
+    /***
      * Fonction permettant de modifier un produit
      */
     function editer() {
@@ -139,6 +162,31 @@ class ControlleurProduit {
     }
 
     /***
+     * Fonction permettant de modifier un produit
+     */
+    function editerJSON() {
+
+        $resultat = new stdClass();
+        $corpsJSON = file_get_contents('php://input'); 
+        $data = json_decode($corpsJSON, TRUE);
+
+
+        if(isset($_GET['id']) && isset($data['nom']) && isset($data['prix_coutant'])
+            && isset($data['prix_vente']) 
+            && isset($data['qte_stock'])) {
+        
+            $resultat->message = modele_produit::editer($_GET['id'], $data['nom'],
+                                                            $data['prix_coutant'], 
+                                                            $data['prix_vente'], 
+                                                            $data['qte_stock']);
+        } else {
+            $resultat->message = "Impossible d'ajouter un produit. Des informations sont manquantes";
+        }
+
+        echo json_encode($resultat);
+    }
+
+    /***
      * Fonction permettant de supprimer un produit
      */
     function supprimer() {
@@ -149,6 +197,23 @@ class ControlleurProduit {
             $erreur = "Impossible de supprimer le produit. Des informations sont manquantes";
             require './vues/erreur.php';
         }
+    }
+
+
+    /**
+     * Fonction permettant de supprier un produit et retourner du JSON
+     */
+    function supprimerJSON() {
+        
+        $resultat = new stdClass();
+
+        if(isset($_GET['id'])) {
+            $resultat->message = modele_produit::supprimer($_GET['id']);
+        } else {
+            $resultat->message = "Impossible de supprimer le produit. Des informations sont manquantes";
+        }
+
+        echo json_encode($resultat);
     }
 
 }
